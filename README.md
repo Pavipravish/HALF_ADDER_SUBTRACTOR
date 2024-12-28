@@ -1,4 +1,7 @@
-![image](https://github.com/user-attachments/assets/9a073c40-7df5-49c1-a706-94f6882ba372)# HALF_ADDER_SUBTRACTOR
+NAME: PRAVISH J
+
+REG NO:24901067
+# HALF_ADDER_SUBTRACTOR
 
 Implementation-of-Half-Adder-and-Half Subtractor-circuit
 
@@ -34,7 +37,14 @@ Borrow = A’B
 Figure -02 HALF Subtractor
 
 **Truthtable**
-![WhatsApp Image 2024-12-23 at 14 07 07_2501f7a7](https://github.com/user-attachments/assets/747d0c93-c99e-4bef-8d62-a57db9202863)
+
+**Half Adder**
+
+![ha truthtable](https://github.com/user-attachments/assets/e645e07f-f76b-498c-96d3-34508f909ba4)
+
+**Half Subtractor**
+
+![hs_truthtable](https://github.com/user-attachments/assets/ce483827-8f26-4ab8-b45e-4901325db982)
 
 **Procedure**
 
@@ -49,35 +59,40 @@ Figure -02 HALF Subtractor
 5.	For different input combinations generate the timing diagram.
 
 
-**Program:**i)FULL ADDER
+**Program:**
+```
+module halfaddsub(a,b,sum,cout,diff,borr);
 
-module fa(a,b,cin,sum,carry);
-input a,b,cin;
-output sum,carry;
-assign sum=( (a ^ b)^cin);
-assign carry= ( (a & b)| ( cin &(a ^ b )));
+input a,b;
+
+output sum,cout,diff,borr;
+
+xor g1(sum,a,b);
+
+and g2(cout,a,b);
+
+wire w1;
+
+xor g3(diff,a,b);
+
+not g4(w1,a);
+
+and g5(borr,w1,b);
+
 endmodule
-
-ii)FULL SUBTRACTOR
-
-module fs(a,b,bin,difference,borrow);
-input a,b,bin;
-output difference,borrow;
-assign difference= ( (a ^ b)^bin);
-assign borrow= ( ( ~a & b)| ( bin & (~(a ^ b ))));
-endmodule
-
-
-Developed by: RegisterNumber:*/
+```
 
 **RTL Schematic**
-![image](https://github.com/user-attachments/assets/7a1253db-8771-421e-a876-1bad5ee00e40)
-![image](https://github.com/user-attachments/assets/3b0dc3dd-979c-4a61-864a-45b5e2431068)
+
+
+<img width="736" alt="Screenshot 2024-11-22 123519" src="https://github.com/user-attachments/assets/ff5e017c-d02b-4758-8c19-807bf6ef499e">
 
 
 **Output/TIMING Waveform**
-![image](https://github.com/user-attachments/assets/85b64ada-a248-4dee-890b-fdc6f217b611)
-![image](https://github.com/user-attachments/assets/774c45e9-900e-4878-a140-75c6809fb33f)
+
+<img width="960" alt="Screenshot 2024-11-22 123811" src="https://github.com/user-attachments/assets/bb91ec5e-295f-4165-b9e0-2161797354ff">
+
 
 **Result:**
-Thus the Full Adder and Full Subtractor circuits are designed and the truth tables is verified using Quartus software.
+
+hence, the design of half adder and half subtractor circuit studied and its truth table is verified in Quartus using Verilog programming.
