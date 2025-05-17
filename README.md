@@ -1,5 +1,6 @@
 # HALF_ADDER_SUBTRACTOR
-**DATE**: 08/10/2024
+# **DATE**: 15/04/2025
+
 Implementation-of-Half-Adder-and-Half Subtractor-circuit
 
 **AIM:**
